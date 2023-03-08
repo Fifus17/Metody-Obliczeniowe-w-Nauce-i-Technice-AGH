@@ -15,7 +15,7 @@ c = 3
 d = 0
 
 # Wartość parametru k
-k = 10
+k = 45
 
 # Typy zmiennych
 types = [np.single, np.double, np.longdouble]
@@ -55,12 +55,12 @@ def rekurencjaPrzod(x_k_1, x_k, k, k_max, type) -> type[2]:
 
 # Funkcja do rekurencji w tył
 def rekurencjaTyl(x_k_1, x_k, k, type) -> type[2]:
-    result = type((-b*x_k - c*x_k_1)/a)
-    if k == 1:
+    result = type((-b*x_k_1 - c*x_k)/a)
+    if k == 2:
         return [result, x_k_1]
     else:
         return rekurencjaTyl(result, x_k_1, k-1, type)
 
 
 # Wywołanie głównej funkcji
-lab1(x_0, x_1, 1, k, types[1])
+lab1(x_0, x_1, 2, k, types[1])
