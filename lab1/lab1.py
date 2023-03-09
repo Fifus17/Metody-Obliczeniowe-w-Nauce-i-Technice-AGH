@@ -6,16 +6,16 @@ import time
 
 # Wartości początkowe
 x_0 = 1
-x_1:np.longdouble = 1/3
+x_1:np.longdouble = 1/30
 
 # Wspłóczynniki w zależności rekurencyjnej
-a = 3
+a = 30
 b = -10
-c = 3
+c = 30
 d = 0
 
 # Wartość parametru k
-k = 45
+k = 900
 
 # Typy zmiennych
 types = [np.single, np.double, np.longdouble]
@@ -48,6 +48,7 @@ def lab1(x_k_1, x_k, k, k_max, type):
 # Funkcja do rekurencji w przód
 def rekurencjaPrzod(x_k_1, x_k, k, k_max, type) -> type[2]:
     result = type((-b*x_k - a*x_k_1)/c)
+    # print([x_k, result])
     if k == k_max:
         return [x_k, result]
     else:
@@ -56,6 +57,7 @@ def rekurencjaPrzod(x_k_1, x_k, k, k_max, type) -> type[2]:
 # Funkcja do rekurencji w tył
 def rekurencjaTyl(x_k_1, x_k, k, type) -> type[2]:
     result = type((-b*x_k_1 - c*x_k)/a)
+    # print([result, x_k_1])
     if k == 2:
         return [result, x_k_1]
     else:
